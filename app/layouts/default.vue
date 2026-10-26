@@ -1,3 +1,7 @@
+<script setup>
+const { count } = useCounter()
+</script>
+
 <template>
   <div>
     <header>
@@ -6,6 +10,8 @@
       <NuxtLink to="/products">Products</NuxtLink> |
       <NuxtLink to="/users">Users</NuxtLink> |
       <NuxtLink to="/team">Team</NuxtLink>
+
+      <span> | Clicks: {{ count }}</span>
     </header>
 
     <main>
