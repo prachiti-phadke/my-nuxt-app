@@ -9,7 +9,10 @@ const { count } = useCounter()
       <NuxtLink to="/contact">Contact</NuxtLink> |
       <NuxtLink to="/products">Products</NuxtLink> |
       <NuxtLink to="/users">Users</NuxtLink> |
-      <NuxtLink to="/team">Team</NuxtLink>
+      <NuxtLink to="/team">Team</NuxtLink> |
+      <span> | </span><TeamCount /> | 
+      <NuxtLink to="/store-team">Store Team</NuxtLink>
+
 
       <span> | Clicks: {{ count }}</span>
     </header>
