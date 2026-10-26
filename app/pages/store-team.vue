@@ -1,8 +1,12 @@
 <script setup>
 import { storeToRefs } from 'pinia'
 import { useUsersStore } from '~/stores/users'
+import { useAuthStore } from '~/stores/auth'
+
+definePageMeta({ middleware: 'auth' })
 
 const store = useUsersStore()
+const auth = useAuthStore()
 const { users, total } = storeToRefs(store)
 const { addUser, updateUser, removeUser } = store
 
@@ -29,6 +33,16 @@ async function handleSave() {
   }
   resetForm()
 }
+
+
+
+
+async function handleLogout() {
+  auth.logout()
+  await navigateTo('/login')
+}
+
+
 </script>
 
 <template>
@@ -42,7 +56,7 @@ async function handleSave() {
     <button type="submit">{{ editingId === null ? 'Add' : 'Update' }}</button>
     <button v-if="editingId !== null" type="button" @click="resetForm">Cancel</button>
   </form>
-
+  <button @click="handleLogout">Log out</button>
   <ul>
     <li v-for="u in users" :key="u.id">
       {{ u.name }} - {{ u.role }}
