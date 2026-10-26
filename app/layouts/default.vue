@@ -4,7 +4,8 @@
       <NuxtLink to="/">Home</NuxtLink> |
       <NuxtLink to="/contact">Contact</NuxtLink> |
       <NuxtLink to="/products">Products</NuxtLink> |
-      <NuxtLink to="/users">Users</NuxtLink>
+      <NuxtLink to="/users">Users</NuxtLink> |
+      <NuxtLink to="/team">Team</NuxtLink>
     </header>
 
     <main>
