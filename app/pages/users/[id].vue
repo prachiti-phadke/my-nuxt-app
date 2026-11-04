@@ -5,6 +5,8 @@
 
 const route = useRoute()
 
+definePageMeta({ middleware: 'users-guard' })
+
 // useFetch() makes an API request to retrieve user details.
 //
 // route.params.id dynamically retrieves the ID from the URL.
